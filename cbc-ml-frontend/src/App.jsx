@@ -1,22 +1,18 @@
-import { useState } from "react";
-import HomePage from "./components/home/HomePage";
-import SiteFooter from "./components/footer/SiteFooter";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
+import HomePage from "./pages/HomePage/HomePage";
+import PredictCbc from "./pages/PredictCbc/PredictCbc";
 
-function PredictionPage({ onBack }) {
-	// your current CBC prediction page code
-}
+
 
 function App() {
-	const [screen, setScreen] = useState("home");
-
-	if (screen === "predict") {
-		return <PredictionPage onBack={() => setScreen("home")} />;
-	}
-
-	return <>
-  <HomePage onTryNow={() => setScreen("predict")} />
-  {/* <SiteFooter /> */}
-  </>
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route path="/" element={<HomePage onTryNow={() => navigate("/predict-cbc")} />} />
+				<Route path="/predict-cbc" element={<PredictCbc />} />
+			</Routes>
+		</BrowserRouter>
+	);
 }
 
 export default App;

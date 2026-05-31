@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
-import AccuracySection from "./AccuracySection";
-import DetectionProcess from "./DetectionProcess";
-import TeamSpecialties from "./TeamSpecialties";
-import PartnersContact from "./PartnersContact";
-import SiteFooter from "../footer/SiteFooter";
+import SiteFooter from "../../components/footer/SiteFooter";
+import AccuracySection from "../../components/home/AccuracySection";
+import DetectionProcess from "../../components/home/DetectionProcess";
+import PartnersContact from "../../components/home/PartnersContact";
+import TeamSpecialties from "../../components/home/TeamSpecialties";
 
-import "./ProcessTeamFusion.css";
+import "../../components/home/ProcessTeamFusion.css";
 
 export default function HomePage({ onTryNow }) {
 	const heroRef = useRef(null);
