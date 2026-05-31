@@ -1,0 +1,43 @@
+
+cbc-ml-backend/venv/
+cbc-ml-backend/__pycache__/
+cbc-ml-backend/**/*.pyc
+cbc-ml-backend/.pytest_cache/
+cbc-ml-backend/.mypy_cache/
+
+# Environment files
+.env
+.env.*
+!.env.example
+cbc-ml-frontend/.env.local
+cbc-ml-backend/.env
+cbc-ml-backend/.env.*
+
+# ML artifacts / models / data
+cbc-ml-backend/artifacts/
+cbc-ml-backend/data/
+cbc-ml-backend/datasets/
+*.pkl
+*.joblib
+*.model
+*.h5
+*.onnx
+*.pt
+*.pth
+
+
+cbc-ml-frontend/node_modules/
+cbc-ml-frontend/dist/
+cbc-ml-frontend/.vite/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

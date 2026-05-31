@@ -1,0 +1,388 @@
+.team-specialties-section {
+    position: relative;
+    min-height: 760px;
+    overflow: hidden;
+    color: #ffffff;
+    /* background:
+      radial-gradient(circle at 91% 87%, rgba(99, 154, 219, 0.58), transparent 35%),
+      radial-gradient(circle at 6% 4%, rgba(126, 162, 205, 0.32), transparent 28%),
+      radial-gradient(circle at 54% 35%, rgba(44, 101, 166, 0.17), transparent 35%),
+      linear-gradient(135deg, #061634 0%, #071d3f 46%, #0a2c58 100%); */
+  }
+  
+  .team-specialties-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+    background-size: 58px 58px;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  
+  .team-specialties-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 34%, rgba(255, 255, 255, 0.045), transparent 29%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.028), transparent 36%);
+    pointer-events: none;
+  }
+  
+  .team-section-inner {
+    position: relative;
+    z-index: 2;
+    width: min(100% - 112px, 1040px);
+    margin: 0 auto;
+    padding: 73px 0 92px;
+  }
+  
+  .team-heading {
+    text-align: center;
+  }
+  
+  .team-heading p {
+    margin: 0;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.72);
+  }
+  
+  .team-heading h2 {
+    margin: 10px 0 0;
+    font-size: clamp(31px, 3.25vw, 42px);
+    line-height: 1;
+    font-weight: 950;
+    letter-spacing: -0.045em;
+    color: #ffffff;
+    text-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  }
+  
+  .team-image-card {
+    position: relative;
+    height: 190px;
+    width: min(100%, 734px);
+    margin: 31px auto 0;
+    overflow: hidden;
+    border-radius: 17px;
+    background:
+      linear-gradient(90deg, rgba(2, 13, 32, 0.45), rgba(2, 13, 32, 0.05) 44%, rgba(2, 13, 32, 0.18)),
+      linear-gradient(135deg, #122942 0%, #4c8ea8 42%, #b9e8f2 58%, #154569 100%);
+    box-shadow:
+      0 24px 60px rgba(0, 10, 32, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
+  }
+  
+  .team-image-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background:
+      radial-gradient(circle at 72% 28%, rgba(255, 255, 255, 0.32), transparent 18%),
+      linear-gradient(90deg, rgba(0, 12, 31, 0.32), transparent 42%, rgba(0, 18, 40, 0.22));
+    pointer-events: none;
+  }
+  
+  /* CSS-made lab/microscope image fallback */
+  .team-fake-lab {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+  
+  .team-face-shadow {
+    position: absolute;
+    left: 36px;
+    top: -31px;
+    width: 250px;
+    height: 240px;
+    border-radius: 48% 52% 42% 58%;
+    background:
+      radial-gradient(circle at 70% 44%, rgba(255, 216, 192, 0.24), transparent 18%),
+      radial-gradient(circle at 58% 52%, rgba(15, 20, 31, 0.92), transparent 42%),
+      radial-gradient(circle at 31% 28%, rgba(5, 7, 12, 0.94), transparent 47%);
+    filter: blur(0.8px);
+    opacity: 0.93;
+  }
+  
+  .team-microscope {
+    position: absolute;
+    left: 286px;
+    top: 34px;
+    width: 230px;
+    height: 150px;
+  }
+  
+  .scope-eye {
+    position: absolute;
+    left: 15px;
+    top: 0;
+    width: 88px;
+    height: 24px;
+    border-radius: 14px;
+    transform: rotate(-25deg);
+    background: linear-gradient(90deg, #e7f2ff, #627d94 45%, #243a4e);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.36);
+  }
+  
+  .scope-body {
+    position: absolute;
+    left: 75px;
+    top: 23px;
+    width: 112px;
+    height: 53px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #20354a, #d4eff6 42%, #254764 72%);
+    box-shadow: 0 14px 24px rgba(0, 0, 0, 0.32);
+  }
+  
+  .scope-arm {
+    position: absolute;
+    left: 140px;
+    top: 63px;
+    width: 55px;
+    height: 82px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #d6edf6, #314e69 70%);
+    transform: rotate(-3deg);
+  }
+  
+  .scope-base {
+    position: absolute;
+    left: 91px;
+    bottom: -2px;
+    width: 135px;
+    height: 25px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #dceff8, #263d58);
+  }
+  
+  .team-lab-light {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 250px;
+    height: 190px;
+    background:
+      radial-gradient(circle at 38% 28%, rgba(239, 255, 255, 0.82), transparent 22%),
+      radial-gradient(circle at 56% 45%, rgba(67, 185, 218, 0.34), transparent 36%);
+    opacity: 0.85;
+  }
+  
+  .team-lab-tubes {
+    position: absolute;
+    right: 50px;
+    bottom: 27px;
+    display: flex;
+    gap: 14px;
+  }
+  
+  .team-lab-tubes span {
+    width: 23px;
+    height: 62px;
+    border-radius: 10px 10px 15px 15px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.85), transparent 34%),
+      linear-gradient(180deg, rgba(94, 217, 246, 0.28), rgba(28, 102, 167, 0.95));
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    transform: rotate(var(--tube-rotate, 0deg));
+  }
+  
+  .team-lab-tubes span:nth-child(1) {
+    --tube-rotate: -4deg;
+  }
+  
+  .team-lab-tubes span:nth-child(2) {
+    --tube-rotate: 2deg;
+  }
+  
+  .team-lab-tubes span:nth-child(3) {
+    --tube-rotate: -1deg;
+  }
+  
+  .team-lab-tubes span:nth-child(4) {
+    --tube-rotate: 4deg;
+  }
+  
+  .team-info-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 155px;
+    gap: 54px;
+    width: min(100%, 734px);
+    margin: 31px auto 0;
+    align-items: start;
+  }
+  
+  .team-info-row p {
+    margin: 0;
+    font-size: 10.5px;
+    line-height: 1.56;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.76);
+  }
+  
+  .team-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    padding-left: 8px;
+  }
+  
+  .team-actions button:first-child {
+    width: 128px;
+    height: 42px;
+    border: 0;
+    border-radius: 12px;
+    background: rgba(87, 150, 213, 0.88);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 13px 30px rgba(0, 15, 45, 0.28);
+    transition: transform 0.24s ease, background 0.24s ease;
+  }
+  
+  .team-actions button:first-child:hover {
+    transform: translateY(-2px);
+    background: rgba(106, 169, 232, 0.96);
+  }
+  
+  .team-actions button:last-child {
+    border: 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 10px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+  
+  .team-actions span {
+    margin-left: 6px;
+  }
+  
+  .specialties-grid {
+    display: grid;
+    grid-template-columns: 275px 1fr;
+    gap: 86px;
+    width: min(100%, 734px);
+    margin: 68px auto 0;
+    align-items: center;
+  }
+  
+  .specialties-copy p {
+    margin: 0 0 13px;
+    font-size: 9px;
+    line-height: 1;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.78);
+  }
+  
+  .specialties-copy h3 {
+    margin: 0;
+    font-size: clamp(34px, 3.8vw, 48px);
+    line-height: 0.96;
+    font-weight: 950;
+    letter-spacing: -0.055em;
+  }
+  
+  .specialties-copy span {
+    display: block;
+    margin-top: 24px;
+    font-size: 10.5px;
+    line-height: 1.55;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.72);
+  }
+  
+  .specialties-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 17px 17px;
+  }
+  
+  .specialty-card {
+    min-height: 74px;
+    border: 0;
+    border-radius: 22px;
+    background: rgba(78, 123, 183, 0.54);
+    color: #ffffff;
+    padding: 0 19px;
+    font-size: 12px;
+    line-height: 1.17;
+    font-weight: 950;
+    letter-spacing: -0.025em;
+    cursor: pointer;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.12),
+      0 16px 32px rgba(0, 12, 36, 0.18);
+    transition: transform 0.24s ease, background 0.24s ease;
+  }
+  
+  .specialty-card:hover {
+    transform: translateY(-3px);
+    background: rgba(91, 145, 209, 0.7);
+  }
+  
+  @media (max-width: 900px) {
+    .team-specialties-section {
+      min-height: auto;
+    }
+  
+    .team-section-inner {
+      width: calc(100% - 42px);
+      padding: 64px 0 80px;
+    }
+  
+    .team-info-row {
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+  
+    .team-actions {
+      padding-left: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .specialties-grid {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+  }
+  
+  @media (max-width: 620px) {
+    .team-heading h2 {
+      font-size: 32px;
+    }
+  
+    .team-image-card {
+      height: 168px;
+      border-radius: 15px;
+    }
+  
+    .team-face-shadow {
+      left: -42px;
+    }
+  
+    .team-microscope {
+      left: 150px;
+      transform: scale(0.82);
+      transform-origin: left top;
+    }
+  
+    .team-lab-tubes {
+      right: 16px;
+      transform: scale(0.78);
+      transform-origin: right bottom;
+    }
+  
+    .specialties-cards {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,218 @@
+/* =====================================================
+   DetectionProcess + TeamSpecialties seamless fusion
+   This removes the horizontal line between those 2 sections.
+   ===================================================== */
+
+   .process-team-fusion {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse at 5% 34%, rgba(211, 237, 255, 0.48) 0%, rgba(103, 154, 210, 0.22) 28%, transparent 58%),
+      radial-gradient(ellipse at 86% 22%, rgba(95, 151, 217, 0.24) 0%, transparent 55%),
+      radial-gradient(ellipse at 91% 83%, rgba(99, 154, 219, 0.40) 0%, transparent 55%),
+      linear-gradient(
+        180deg,
+        #08234b 0%,
+        #173f68 31%,
+        #214f7a 49%,
+        #0c2d59 67%,
+        #071f46 100%
+      );
+  }
+  
+  /* soft continuous mist over the whole combined area */
+  .process-team-fusion::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 42% 45%, rgba(255, 255, 255, 0.055) 0%, transparent 32%),
+      radial-gradient(ellipse at 50% 60%, rgba(93, 150, 214, 0.14) 0%, transparent 58%);
+  }
+  
+  /* subtle grid/noise, continuous across both sections */
+  .process-team-fusion::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    background-size: 72px 72px;
+    opacity: 0.045;
+  }
+  
+  /* Kill hard individual section backgrounds inside this wrapper */
+  .process-team-fusion .detection-process-section,
+  .process-team-fusion .team-specialties-section {
+    background: transparent !important;
+    overflow: visible !important;
+  }
+  
+  /* Kill old section pseudo backgrounds only inside this wrapper */
+  .process-team-fusion .detection-process-section::before,
+  .process-team-fusion .detection-process-section::after,
+  .process-team-fusion .team-specialties-section::before,
+  .process-team-fusion .team-specialties-section::after {
+    background: transparent !important;
+  }
+  
+  /* Pull Team section upward into same color field */
+  .process-team-fusion .team-specialties-section {
+    margin-top: -185px !important;
+    padding-top: 255px !important;
+  }
+  
+  /* Keep content above fusion effects */
+  .process-team-fusion .dp-left-visual,
+  .process-team-fusion .dp-content,
+  .process-team-fusion .team-section-inner {
+    position: relative;
+    z-index: 5;
+  }
+  
+  /* The actual seam eraser between DetectionProcess and TeamSpecialties */
+  .process-team-feather {
+    position: relative;
+    z-index: 3;
+    height: 360px;
+    margin-top: -210px;
+    margin-bottom: -165px;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(33, 79, 122, 0) 0%,
+        rgba(34, 82, 128, 0.62) 22%,
+        rgba(31, 77, 122, 0.88) 48%,
+        rgba(18, 55, 99, 0.68) 70%,
+        rgba(7, 31, 70, 0) 100%
+      ),
+      radial-gradient(
+        ellipse at 50% 48%,
+        rgba(116, 174, 232, 0.25) 0%,
+        rgba(45, 96, 154, 0.22) 36%,
+        rgba(7, 31, 70, 0) 76%
+      );
+    filter: blur(34px);
+  }
+  
+  /* hide any old external divider */
+  .section-blend {
+    display: none !important;
+  }
+  
+  @media (max-width: 900px) {
+    .process-team-fusion .team-specialties-section {
+      margin-top: -110px !important;
+      padding-top: 170px !important;
+    }
+  
+    .process-team-feather {
+      height: 260px;
+      margin-top: -145px;
+      margin-bottom: -110px;
+      filter: blur(28px);
+    }
+  }
+
+
+
+
+
+
+
+  /* =====================================================
+   TeamSpecialties → PartnersContact seamless fusion
+   ===================================================== */
+
+.process-team-fusion .partners-contact-section {
+    background: transparent !important;
+    /* margin-top: -220px !important; */
+    /* padding-top: 300px !important; */
+    overflow: visible !important;
+  }
+  
+  /* Remove PartnersContact hard rectangular overlays inside fusion */
+  .process-team-fusion .partners-contact-section::after {
+    background: transparent !important;
+  }
+  
+  /* Replace the old hard top glow with a soft blended arch */
+  .process-team-fusion .partners-contact-section::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: -210px !important;
+    width: 125% !important;
+    height: 420px !important;
+    transform: translateX(-50%) !important;
+    border-radius: 0 0 50% 50% !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(205, 232, 255, 0.48) 0%,
+        rgba(118, 170, 222, 0.30) 31%,
+        rgba(45, 92, 145, 0.16) 57%,
+        rgba(7, 31, 70, 0) 78%
+      ) !important;
+    filter: blur(38px) !important;
+  }
+  
+  /* The actual seam cover between Team and Partners */
+  .team-partners-feather {
+    position: relative;
+    z-index: 4;
+    height: 420px;
+    margin-top: -240px;
+    margin-bottom: -250px;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 31, 70, 0) 0%,
+        rgba(20, 62, 105, 0.42) 24%,
+        rgba(64, 105, 144, 0.68) 49%,
+        rgba(23, 65, 108, 0.48) 72%,
+        rgba(7, 31, 70, 0) 100%
+      ),
+      radial-gradient(
+        ellipse at 50% 48%,
+        rgba(190, 222, 252, 0.32) 0%,
+        rgba(91, 149, 208, 0.24) 34%,
+        rgba(7, 31, 70, 0) 76%
+      );
+    filter: blur(42px);
+  }
+  
+  /* Keep Partners content above blend */
+  .process-team-fusion .partners-inner {
+    position: relative;
+    z-index: 8;
+  }
+  
+  /* Hide original PartnersContact top-glow bar if it creates a line */
+  .process-team-fusion .partners-top-glow {
+    display: none !important;
+  }
+  
+  @media (max-width: 900px) {
+    .process-team-fusion .partners-contact-section {
+      /* margin-top: -130px !important; */
+      /* padding-top: 210px !important; */
+    }
+  
+    .team-partners-feather {
+      height: 300px;
+      margin-top: -170px;
+      margin-bottom: -170px;
+      filter: blur(32px);
+    }
+  }

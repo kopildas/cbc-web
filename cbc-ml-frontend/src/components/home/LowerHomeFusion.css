@@ -1,0 +1,240 @@
+.lower-home-fusion {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+      radial-gradient(ellipse at 5% 42%, rgba(210, 237, 255, 0.48) 0%, rgba(107, 157, 211, 0.23) 28%, transparent 60%),
+      radial-gradient(ellipse at 90% 18%, rgba(88, 148, 214, 0.25) 0%, transparent 58%),
+      radial-gradient(ellipse at 92% 72%, rgba(96, 154, 219, 0.34) 0%, transparent 58%),
+      linear-gradient(
+        180deg,
+        #08234b 0%,
+        #123d69 18%,
+        #214f7a 35%,
+        #295983 47%,
+        #0f315d 62%,
+        #08254e 78%,
+        #061b3f 100%
+      );
+  }
+  
+  /* continuous soft mist across all lower sections */
+  .lower-home-fusion::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 34%),
+      radial-gradient(ellipse at 50% 44%, rgba(142, 190, 236, 0.13) 0%, transparent 62%),
+      radial-gradient(ellipse at 50% 68%, rgba(110, 170, 230, 0.12) 0%, transparent 58%);
+  }
+  
+  /* remove every hard rectangle background inside this wrapper */
+  .lower-home-fusion .accuracy-section,
+  .lower-home-fusion .detection-process-section,
+  .lower-home-fusion .team-specialties-section,
+  .lower-home-fusion .partners-contact-section {
+    background: transparent !important;
+    overflow: visible !important;
+  }
+  
+  /* kill old pseudo background blocks that create horizontal lines */
+  .lower-home-fusion .accuracy-section::before,
+  .lower-home-fusion .accuracy-section::after,
+  .lower-home-fusion .detection-process-section::before,
+  .lower-home-fusion .detection-process-section::after,
+  .lower-home-fusion .team-specialties-section::before,
+  .lower-home-fusion .team-specialties-section::after,
+  .lower-home-fusion .partners-contact-section::after {
+    background: transparent !important;
+  }
+  
+  /* content always above blend layers */
+  .lower-home-fusion .accuracy-inner,
+  .lower-home-fusion .dp-left-visual,
+  .lower-home-fusion .dp-content,
+  .lower-home-fusion .team-section-inner,
+  .lower-home-fusion .partners-inner {
+    position: relative;
+    z-index: 10;
+  }
+  
+  /* remove top edge between hero and accuracy */
+  .lower-home-fusion {
+    margin-top: -120px;
+    padding-top: 120px;
+  }
+  
+  /* remove gap between accuracy and detection */
+  .lower-home-fusion .detection-process-section {
+    margin-top: -220px !important;
+    padding-top: 315px !important;
+  }
+  
+  .accuracy-process-feather {
+    position: relative;
+    z-index: 4;
+    height: 460px;
+    margin-top: -245px;
+    margin-bottom: -295px;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(8, 35, 75, 0) 0%,
+        rgba(18, 60, 101, 0.45) 22%,
+        rgba(50, 96, 139, 0.74) 49%,
+        rgba(41, 86, 130, 0.54) 72%,
+        rgba(8, 35, 75, 0) 100%
+      ),
+      radial-gradient(
+        ellipse at 16% 48%,
+        rgba(220, 241, 255, 0.36) 0%,
+        rgba(101, 155, 211, 0.22) 36%,
+        rgba(8, 35, 75, 0) 76%
+      );
+    filter: blur(44px);
+  }
+  
+  /* detection to team */
+  .lower-home-fusion .team-specialties-section {
+    margin-top: -185px !important;
+    padding-top: 255px !important;
+  }
+  
+  .process-team-feather {
+    position: relative;
+    z-index: 4;
+    height: 360px;
+    margin-top: -210px;
+    margin-bottom: -165px;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(33, 79, 122, 0) 0%,
+        rgba(34, 82, 128, 0.62) 22%,
+        rgba(31, 77, 122, 0.88) 48%,
+        rgba(18, 55, 99, 0.68) 70%,
+        rgba(7, 31, 70, 0) 100%
+      ),
+      radial-gradient(
+        ellipse at 50% 48%,
+        rgba(116, 174, 232, 0.25) 0%,
+        rgba(45, 96, 154, 0.22) 36%,
+        rgba(7, 31, 70, 0) 76%
+      );
+    filter: blur(34px);
+  }
+  
+  /* team to partners */
+  .lower-home-fusion .partners-contact-section {
+    background: transparent !important;
+    margin-top: -220px !important;
+    padding-top: 300px !important;
+  }
+  
+  .lower-home-fusion .partners-contact-section::before {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: -210px !important;
+    width: 125% !important;
+    height: 420px !important;
+    transform: translateX(-50%) !important;
+    border-radius: 0 0 50% 50% !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+    background:
+      radial-gradient(
+        ellipse at center,
+        rgba(205, 232, 255, 0.48) 0%,
+        rgba(118, 170, 222, 0.3) 31%,
+        rgba(45, 92, 145, 0.16) 57%,
+        rgba(7, 31, 70, 0) 78%
+      ) !important;
+    filter: blur(38px) !important;
+  }
+  
+  .team-partners-feather {
+    position: relative;
+    z-index: 4;
+    height: 420px;
+    margin-top: -240px;
+    margin-bottom: -250px;
+    pointer-events: none;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(7, 31, 70, 0) 0%,
+        rgba(20, 62, 105, 0.42) 24%,
+        rgba(64, 105, 144, 0.68) 49%,
+        rgba(23, 65, 108, 0.48) 72%,
+        rgba(7, 31, 70, 0) 100%
+      ),
+      radial-gradient(
+        ellipse at 50% 48%,
+        rgba(190, 222, 252, 0.32) 0%,
+        rgba(91, 149, 208, 0.24) 34%,
+        rgba(7, 31, 70, 0) 76%
+      );
+    filter: blur(42px);
+  }
+  
+  .lower-home-fusion .partners-top-glow {
+    display: none !important;
+  }
+  
+  /* if old wrappers still exist, neutralize them */
+  .process-team-fusion {
+    background: transparent !important;
+  }
+  
+  .section-blend {
+    display: none !important;
+  }
+  
+  @media (max-width: 900px) {
+    .lower-home-fusion {
+      margin-top: -80px;
+      padding-top: 80px;
+    }
+  
+    .lower-home-fusion .detection-process-section {
+      margin-top: -135px !important;
+      padding-top: 205px !important;
+    }
+  
+    .accuracy-process-feather {
+      height: 300px;
+      margin-top: -165px;
+      margin-bottom: -185px;
+      filter: blur(34px);
+    }
+  
+    .lower-home-fusion .team-specialties-section {
+      margin-top: -110px !important;
+      padding-top: 170px !important;
+    }
+  
+    .process-team-feather {
+      height: 260px;
+      margin-top: -145px;
+      margin-bottom: -110px;
+      filter: blur(28px);
+    }
+  
+    .lower-home-fusion .partners-contact-section {
+      margin-top: -130px !important;
+      padding-top: 210px !important;
+    }
+  
+    .team-partners-feather {
+      height: 300px;
+      margin-top: -170px;
+      margin-bottom: -170px;
+      filter: blur(32px);
+    }
+  }

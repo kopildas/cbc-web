@@ -1,0 +1,258 @@
+/* 
+  This file must load AFTER all section CSS files.
+  It removes hard section edges and creates one continuous blended background.
+*/
+
+.cellens-page {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+    isolation: isolate;
+    background: #061b3f;
+  }
+  
+  /* One continuous background for the whole homepage */
+  .cellens-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+    background:
+      radial-gradient(ellipse 85% 12% at 50% 0%, rgba(203, 229, 255, 0.30) 0%, rgba(92, 145, 202, 0.20) 34%, transparent 72%),
+      radial-gradient(ellipse 42% 13% at 79% 9%, rgba(117, 179, 239, 0.33) 0%, transparent 70%),
+      radial-gradient(ellipse 46% 15% at 14% 26%, rgba(98, 154, 214, 0.23) 0%, transparent 68%),
+      radial-gradient(ellipse 56% 15% at 84% 43%, rgba(80, 137, 199, 0.20) 0%, transparent 70%),
+      radial-gradient(ellipse 72% 18% at 5% 56%, rgba(207, 233, 255, 0.38) 0%, rgba(100, 151, 207, 0.20) 30%, transparent 68%),
+      radial-gradient(ellipse 54% 16% at 85% 74%, rgba(97, 153, 217, 0.28) 0%, transparent 68%),
+      linear-gradient(
+        180deg,
+        #061a39 0%,
+        #143a63 15%,
+        #08254d 28%,
+        #061d42 39%,
+        #08234a 49%,
+        #244f7b 58%,
+        #08244b 68%,
+        #071f46 80%,
+        #061b3f 100%
+      );
+  }
+  
+  /* Very soft global mist/noise so sections feel connected */
+  .cellens-page::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+    background-size: 72px 72px;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+  
+  /* Remove all hard backgrounds from sections */
+  .cellens-hero,
+  .accuracy-section,
+  .detection-process-section,
+  .team-specialties-section,
+  .partners-contact-section,
+  .site-footer {
+    background: transparent !important;
+    position: relative;
+    isolation: isolate;
+  }
+  
+  /* Make sure previous hard pseudo backgrounds are replaced */
+  .cellens-hero::before,
+  .accuracy-section::before,
+  .detection-process-section::before,
+  .team-specialties-section::before,
+  .partners-contact-section::before,
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+  }
+  
+  /* Keep real content above the glow layers */
+  .cellens-nav,
+  .hero-copy,
+  .hero-noise,
+  .cell,
+  .hero-bottom-glow,
+  .accuracy-inner,
+  .dp-left-visual,
+  .dp-content,
+  .team-section-inner,
+  .partners-inner,
+  .footer-inner {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* HERO glow only, no hard rectangle */
+  .cellens-hero::before {
+    inset: 0 0 -280px 0;
+    background:
+      radial-gradient(circle at 72% 36%, rgba(152, 202, 247, 0.48) 0%, rgba(65, 121, 183, 0.25) 28%, transparent 56%),
+      radial-gradient(circle at 49% 48%, rgba(101, 155, 214, 0.34) 0%, rgba(32, 83, 145, 0.22) 38%, transparent 64%),
+      radial-gradient(circle at 19% 85%, rgba(26, 78, 139, 0.35) 0%, transparent 50%);
+  }
+  
+  /* Hero bottom fade into next section */
+  .cellens-hero::after {
+    content: "";
+    position: absolute;
+    left: -8%;
+    right: -8%;
+    bottom: -210px;
+    height: 420px;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 52%, rgba(45, 96, 157, 0.38) 0%, rgba(7, 31, 68, 0.42) 42%, transparent 74%);
+    filter: blur(32px);
+  }
+  
+  /* ACCURACY section overlaps smoothly upward */
+  .accuracy-section {
+    margin-top: -120px;
+    padding-top: 120px;
+  }
+  
+  .accuracy-section::before {
+    inset: -260px 0 -220px 0;
+    background:
+      radial-gradient(ellipse at 82% 32%, rgba(75, 132, 195, 0.34) 0%, transparent 58%),
+      radial-gradient(ellipse at 16% 62%, rgba(42, 91, 154, 0.24) 0%, transparent 60%),
+      linear-gradient(180deg, transparent 0%, rgba(8, 35, 74, 0.28) 42%, transparent 100%);
+  }
+  
+  .accuracy-section::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    top: -230px;
+    height: 460px;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 48%, rgba(81, 137, 202, 0.22) 0%, rgba(7, 30, 66, 0.34) 42%, transparent 73%);
+    filter: blur(38px);
+  }
+  
+  /* DETECTION section overlaps accuracy smoothly */
+  .detection-process-section {
+    margin-top: -145px;
+    padding-top: 145px;
+  }
+  
+  .detection-process-section::before {
+    inset: -270px 0 -230px 0;
+    background:
+      radial-gradient(ellipse at 4% 54%, rgba(218, 239, 255, 0.48) 0%, rgba(108, 158, 213, 0.22) 28%, transparent 60%),
+      radial-gradient(ellipse at 88% 18%, rgba(86, 146, 207, 0.25) 0%, transparent 58%),
+      linear-gradient(180deg, transparent 0%, rgba(34, 78, 124, 0.28) 50%, transparent 100%);
+  }
+  
+  .detection-process-section::after {
+    content: "";
+    position: absolute;
+    left: -12%;
+    right: -12%;
+    top: -230px;
+    height: 460px;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 35% 48%, rgba(145, 190, 230, 0.23) 0%, rgba(35, 80, 128, 0.30) 40%, transparent 73%);
+    filter: blur(42px);
+  }
+  
+  /* TEAM section overlaps process smoothly */
+  .team-specialties-section {
+    margin-top: -125px;
+    padding-top: 125px;
+  }
+  
+  .team-specialties-section::before {
+    inset: -250px 0 -210px 0;
+    background:
+      radial-gradient(ellipse at 93% 75%, rgba(97, 153, 219, 0.34) 0%, transparent 56%),
+      radial-gradient(ellipse at 8% 10%, rgba(109, 153, 207, 0.18) 0%, transparent 52%),
+      linear-gradient(180deg, transparent 0%, rgba(8, 34, 72, 0.30) 48%, transparent 100%);
+  }
+  
+  .team-specialties-section::after {
+    content: "";
+    position: absolute;
+    left: -10%;
+    right: -10%;
+    top: -210px;
+    height: 420px;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(ellipse at 50% 50%, rgba(77, 132, 194, 0.20) 0%, rgba(6, 29, 65, 0.28) 45%, transparent 74%);
+    filter: blur(36px);
+  }
+  
+  /* PARTNERS section top arch glow */
+  .partners-contact-section {
+    margin-top: -80px;
+    padding-top: 80px;
+  }
+  
+  .partners-contact-section::before {
+    left: 50%;
+    top: -135px;
+    width: 118%;
+    height: 320px;
+    transform: translateX(-50%);
+    border-radius: 0 0 50% 50%;
+    background:
+      radial-gradient(ellipse at center, rgba(217, 239, 255, 0.54) 0%, rgba(123, 173, 222, 0.30) 34%, rgba(42, 86, 138, 0.16) 58%, transparent 74%);
+    filter: blur(22px);
+  }
+  
+  /* FOOTER should also feel connected */
+  .site-footer {
+    margin-top: -1px;
+  }
+  
+  .site-footer::before {
+    inset: -120px 0 0 0;
+    background:
+      linear-gradient(180deg, rgba(6, 27, 63, 0) 0%, rgba(6, 27, 63, 0.72) 42%, #061b3f 100%);
+  }
+  
+  /* Remove old blend divs completely if they still exist */
+  .section-blend {
+    display: none !important;
+  }
+  
+  @media (max-width: 768px) {
+    .accuracy-section {
+      margin-top: -80px;
+      padding-top: 80px;
+    }
+  
+    .detection-process-section {
+      margin-top: -95px;
+      padding-top: 95px;
+    }
+  
+    .team-specialties-section {
+      margin-top: -80px;
+      padding-top: 80px;
+    }
+  
+    .partners-contact-section {
+      margin-top: -60px;
+      padding-top: 60px;
+    }
+  }
